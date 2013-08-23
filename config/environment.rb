@@ -2,4 +2,4 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
-AjaxDemo::Application.initialize!
+FirstAjaxProject::Application.initialize!

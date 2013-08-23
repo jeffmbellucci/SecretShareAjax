@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-AjaxDemo::Application.load_tasks
+FirstAjaxProject::Application.load_tasks

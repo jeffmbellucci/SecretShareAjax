@@ -1,4 +1,4 @@
-AjaxDemo::Application.routes.draw do
+FirstAjaxProject::Application.routes.draw do
   root :to => "Users#new"
 
   resources :secrets
