@@ -1,7 +1,9 @@
 FirstAjaxProject::Application.routes.draw do
   root :to => "Users#new"
 
-  resources :secrets
+  resources :secrets, :only => :create
   resource :session
-  resources :users
+  resources :users do
+    resources :secrets, :only => [:new]
+  end
 end
