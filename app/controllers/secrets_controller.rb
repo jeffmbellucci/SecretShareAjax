@@ -8,4 +8,8 @@ class SecretsController < ApplicationController
       format.json { render :json => @secret }
     end
   end
+
+  def new
+    @recipient_id = params[:id]
+  end
 end
