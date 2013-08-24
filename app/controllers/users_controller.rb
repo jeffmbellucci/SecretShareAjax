@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :require_current_user!, :except => [:create, :new]
-  before_fitler :require_no_current_user!, :on => [:create, :new]
+  before_filter :require_no_current_user!, :only => [:create, :new]
 
   def create
     @user = User.new(params[:user])

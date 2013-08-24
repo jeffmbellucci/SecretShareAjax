@@ -8,6 +8,15 @@
 </head>
 
 <body>
+  <div>
+    <% if current_user.nil? %>
+      <%= link_to "Log in!", new_session_url %>
+    <% else %>
+      <%= current_user.username %>
+      <%= button_to "Log out", session_url, :method => :delete %>
+    <% end %>
+  </div>
+
   <%= yield %>
 </body>
 </html>
