@@ -27,7 +27,11 @@ On the `/users` page, list all users, and add a "Friend" button for
 each. Since you don't need a full-fledged form (there should be no
 params to POST), your form can be empty except for the submit button.
 
-Make the form a "remote" form: submit it via AJAX.
+Make the form a "remote" form: submit it via AJAX.  Your success callback
+expects to receive a JSON object from the server (take a look at the 
+success section of the [AJAX API][ajax-success]).
+
+[ajax-success]: http://api.jquery.com/jQuery.ajax/#jQuery-ajax-settings
 
 When clicked, change the button text to "Friending..." and disable the
 submit button. When the request succeeds, change the text to
