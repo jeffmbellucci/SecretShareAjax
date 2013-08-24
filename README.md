@@ -1,31 +1,44 @@
 # First Ajax Project
 
+**TODO**: use data-id to avoid many callbacks.
+
 This project is a simple secret sharing project. I've written two
 models: `User` and `Secret`. I've also built `UsersController` and
 `SessionsController` to do login for you.
 
 ## Phase I: secrets form
 
-Write a `/users/123/secrets/new` form. You'll need to create a nested
-route.
+Write a plain-old (non-AJAX) `/users/123/secrets/new` form. You'll
+need to create a nested route. Restrict to a `new` action. Make a
+top-level `/secrets` resource, too. We'll have our nested `new` form
+post to the top-level `/secrets` route (it's preferred to POST to a
+top-level route). You can restrict the top-level `secrets` route to
+`create`.
 
-When you post a secret, you are sharing it to someone's 'wall'. The
-recipient's user id is in the URL. For example,
-`/users/123/secrets/new` is going to create a secret where `User` 123
-is the recipient. You can use a hidden field to store the recipient's
-id. You should not need a hidden field for the poster's id.
+Write the form to post a secret. When you post a secret, you are
+sharing it to someone's 'wall'. The form at `/users/123/secrets/new`
+should post a secret to recipient `123`. Hints:
+
+* You'll need to upload the recipient's `user_id`.
+* You should not need to upload the sender's id. Modify the
+  `SecretsController#create` to use the `current_user`'s id.
+
+You can look at a user's page to view the secrets they have been
+shared and make sure things are working.
 
 ## Phase II: Add friendships
 
 Write a `Friendship` model to join `User` to `User`. Friendship is
-one-way in this application. Write a simple `Friendships` controller
-(the only action needed is `create`, I think). Nest a `friendship`
-resource inside the `users` resource. Friending someone should be as
-simple as POSTing to `/users/123/friendship`.
+one-way in this application; I used `out_friend` and `in_friend` as
+associations.
 
-On the `/users` page, list all users, and add a "Friend" button for
-each. Since you don't need a full-fledged form (there should be no
-params to POST), your form can be empty except for the submit button.
+Write a simple `Friendships` controller (the only action needed is
+`create`, I think). Setup a top-level `friendships` resource. Again,
+you'll want to post `in_friend_id`, but `out_friend_id` can be
+calculated from the current user.
+
+Add a `/users` index page, list all users, and add a "Friend" button
+for each.
 
 Make the form a "remote" form: submit it via AJAX.
 
