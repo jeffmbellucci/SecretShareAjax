@@ -107,7 +107,7 @@ one for each `Tag`. To give your JavaScript code access to the list of
 `Tag`s, I'd store the JSONified `Tag`s in an HTML script tag. Check
 out the [bootstrapping data][bootstrapping-data] chapter for hints.
 
-[bootstrapping-data]: https://github.com/appacademy/js-curriculum/blob/master/client-side-js/bootstrapping-data.md
+[bootstrapping-data]: https://github.com/appacademy/js-curriculum/blob/master/w6d4/bootstrapping-data.md
 
 ### Underscore template trick
 
@@ -117,4 +117,4 @@ inject into the form, we can use an underscore template. Recall how to
 do this by referring to the
 [underscore templates][underscore-templates] reading.
 
-[underscore-templates]: https://github.com/appacademy/js-curriculum/blob/master/client-side-js/underscore-templates.md
+[underscore-templates]: https://github.com/appacademy/js-curriculum/blob/master/w6d4/underscore-templates.md
